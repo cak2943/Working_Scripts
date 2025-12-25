@@ -1,8 +1,8 @@
 import os
 import zipfile
 
-def extract_all_zip_files(directory):
-    for foldername, subfolders, filenames in os.walk(directory):
+def extract_all_zip_files(directory: str) -> None:
+    for foldername, _, filenames in os.walk(directory):
         for filename in filenames:
             if filename.lower().endswith('.zip'):
                 zip_path = os.path.join(foldername, filename)
@@ -23,9 +23,7 @@ def extract_all_zip_files(directory):
 def main():
     ###USER INPUT###
     parent_directory = r"M:\ZipTest"
-    
     extract_all_zip_files(parent_directory)
-
 
 if __name__ == "__main__":
     main()
